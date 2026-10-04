@@ -1,0 +1,614 @@
+<link rel="stylesheet" href="style.css">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="The Conversation Club — meaningful questions for better conversations."
+  >
+
+  <title>The Conversation Club</title>
+
+  <!-- Main stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+  <header class="site-header">
+
+    <div class="header-inner">
+
+      <a href="#" class="logo" aria-label="The Conversation Club home">
+        <span class="logo-mark">♡</span>
+        <span class="logo-text">
+          <strong>The Conversation</strong>
+          <span>Club</span>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#play">Play</a>
+        <a href="#favorites">Favorites</a>
+        <a href="#saved">Saved Answers</a>
+      </nav>
+
+      <button
+        class="mobile-menu-button"
+        id="mobileMenuButton"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+    </div>
+
+    <nav
+      class="mobile-nav"
+      id="mobileNav"
+      aria-label="Mobile navigation"
+    >
+      <a href="#play">Play</a>
+      <a href="#favorites">Favorites</a>
+      <a href="#saved">Saved Answers</a>
+    </nav>
+
+  </header>
+
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+      <div class="hero-content">
+
+        <span class="eyebrow">
+          GOOD QUESTIONS. BETTER CONVERSATIONS.
+        </span>
+
+        <h1>
+          Start a conversation<br>
+          worth remembering.
+        </h1>
+
+        <p>
+          Discover thoughtful, funny, deep, and unexpected questions
+          designed to bring people closer.
+        </p>
+
+        <a href="#play" class="hero-button">
+          Start a Conversation
+        </a>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PLAY SECTION
+    ========================== -->
+    <section class="play-section" id="play">
+
+      <div class="section-heading">
+
+        <span class="section-label">LET'S TALK</span>
+
+        <h2>Choose your conversation.</h2>
+
+        <p>
+          Pick a category, choose how deep you want to go,
+          and discover your next question.
+        </p>
+
+      </div>
+
+
+      <!-- =========================
+           GAME CONTROLS
+      ========================== -->
+      <div class="game-controls">
+
+        <!-- CATEGORY -->
+        <div class="control-group">
+
+          <label for="categoryButtons">
+            Category
+          </label>
+
+          <div
+            class="category-buttons"
+            id="categoryButtons"
+            role="group"
+            aria-label="Question category"
+          >
+
+            <button
+              class="category-button active"
+              type="button"
+              data-category="all"
+            >
+              Everything
+            </button>
+
+            <button
+              class="category-button"
+              type="button"
+              data-category="icebreaker"
+            >
+              Icebreakers
+            </button>
+
+            <button
+              class="category-button"
+              type="button"
+              data-category="fun"
+            >
+              Fun
+            </button>
+
+            <button
+              class="category-button"
+              type="button"
+              data-category="deep"
+            >
+              Deep
+            </button>
+
+            <button
+              class="category-button"
+              type="button"
+              data-category="dreams"
+            >
+              Dreams
+            </button>
+
+            <button
+              class="category-button"
+              type="button"
+              data-category="memories"
+            >
+              Memories
+            </button>
+
+            <button
+              class="category-button"
+              type="button"
+              data-category="relationships"
+            >
+              Relationships
+            </button>
+
+            <button
+              class="category-button"
+              type="button"
+              data-category="life"
+            >
+              Life
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- OTHER CONTROLS -->
+        <div class="secondary-controls">
+
+          <!-- DEPTH -->
+          <div class="select-group">
+
+            <label for="depthSelect">
+              Depth
+            </label>
+
+            <select id="depthSelect">
+
+              <option value="any">
+                Any
+              </option>
+
+              <option value="light">
+                Light
+              </option>
+
+              <option value="medium">
+                Medium
+              </option>
+
+              <option value="deep">
+                Deep
+              </option>
+
+            </select>
+
+          </div>
+
+
+          <!-- MODE -->
+          <div class="select-group">
+
+            <label for="modeSelect">
+              Playing with
+            </label>
+
+            <select id="modeSelect">
+
+              <option value="solo">
+                Myself
+              </option>
+
+              <option value="friends">
+                Friends
+              </option>
+
+              <option value="group">
+                A Group
+              </option>
+
+              <option value="partner">
+                My Partner
+              </option>
+
+            </select>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- =========================
+           QUESTION PLAYER
+      ========================== -->
+      <div class="question-player" id="questionPlayer">
+
+        <div class="question-card">
+
+          <div class="question-card-top">
+
+            <span
+              class="question-category"
+              id="questionCategory"
+            >
+              Icebreaker
+            </span>
+
+            <button
+              class="favorite-button"
+              id="favoriteButton"
+              type="button"
+              aria-label="Add question to favorites"
+              aria-pressed="false"
+            >
+              ♡
+            </button>
+
+          </div>
+
+
+          <div class="question-number" id="questionNumber">
+            Question 1
+          </div>
+
+
+          <h3
+            class="question-text"
+            id="questionText"
+          >
+            Your question will appear here.
+          </h3>
+
+
+          <!-- FOLLOW-UP -->
+          <div
+            class="follow-up"
+            id="followUpContainer"
+            hidden
+          >
+
+            <span class="follow-up-label">
+              GO A LITTLE DEEPER
+            </span>
+
+            <p id="followUpText"></p>
+
+          </div>
+
+
+          <!-- ANSWER AREA -->
+          <div class="answer-area">
+
+            <label for="answerInput">
+              Your answer
+              <span class="optional-label">(optional)</span>
+            </label>
+
+            <textarea
+              id="answerInput"
+              rows="5"
+              placeholder="Write your thoughts here..."
+            ></textarea>
+
+
+            <div class="answer-actions">
+
+              <button
+                class="secondary-button"
+                id="saveAnswerButton"
+                type="button"
+              >
+                Save Answer
+              </button>
+
+              <button
+                class="text-button"
+                id="clearAnswerButton"
+                type="button"
+              >
+                Clear
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- CARD FOOTER -->
+          <div class="question-card-footer">
+
+            <button
+              class="follow-up-button"
+              id="followUpButton"
+              type="button"
+              aria-expanded="false"
+            >
+              Show follow-up
+            </button>
+
+            <button
+              class="spin-button"
+              id="spinButton"
+              type="button"
+            >
+              <span class="spin-icon">✦</span>
+              <span>New Question</span>
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- QUESTION STATS -->
+        <div class="question-stats">
+
+          <div class="stat">
+
+            <span
+              class="stat-number"
+              id="remainingCount"
+            >
+              112
+            </span>
+
+            <span class="stat-label">
+              questions left
+            </span>
+
+          </div>
+
+
+          <div class="stat-divider"></div>
+
+
+          <div class="stat">
+
+            <span
+              class="stat-number"
+              id="favoriteCount"
+            >
+              0
+            </span>
+
+            <span class="stat-label">
+              favorites
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FAVORITES
+    ========================== -->
+    <section
+      class="saved-section"
+      id="favorites"
+    >
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          YOUR COLLECTION
+        </span>
+
+        <h2>Favorite questions.</h2>
+
+        <p>
+          Keep the questions you want to come back to.
+        </p>
+
+      </div>
+
+
+      <div
+        class="saved-grid"
+        id="favoritesList"
+      >
+
+        <div class="empty-state" id="favoritesEmpty">
+
+          <div class="empty-icon">♡</div>
+
+          <h3>No favorites yet.</h3>
+
+          <p>
+            Tap the heart on a question to save it here.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SAVED ANSWERS
+    ========================== -->
+    <section
+      class="saved-section saved-answers-section"
+      id="saved"
+    >
+
+      <div class="section-heading">
+
+        <span class="section-label">
+          YOUR THOUGHTS
+        </span>
+
+        <h2>Saved answers.</h2>
+
+        <p>
+          Your personal answers stay here so you can revisit them later.
+        </p>
+
+      </div>
+
+
+      <div
+        class="saved-grid"
+        id="savedAnswersList"
+      >
+
+        <div
+          class="empty-state"
+          id="savedAnswersEmpty"
+        >
+
+          <div class="empty-icon">✎</div>
+
+          <h3>No saved answers yet.</h3>
+
+          <p>
+            Write an answer and save it to keep your thoughts here.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+    <section class="about-section">
+
+      <div class="about-content">
+
+        <span class="section-label">
+          THE CONVERSATION CLUB
+        </span>
+
+        <h2>
+          Sometimes one good question
+          is all you need.
+        </h2>
+
+        <p>
+          The Conversation Club is a simple space for meaningful,
+          funny, thoughtful, and unexpected conversations.
+          Choose a question and see where the conversation takes you.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+  <footer class="site-footer">
+
+    <div class="footer-inner">
+
+      <div class="footer-brand">
+
+        <span class="logo-mark">♡</span>
+
+        <span>
+          The Conversation Club
+        </span>
+
+      </div>
+
+      <p>
+        Made for better conversations.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       TOAST / NOTIFICATION
+  ========================== -->
+  <div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+  >
+    <span id="toastMessage"></span>
+  </div>
+
+
+  <!-- =========================
+       JAVASCRIPT
+       IMPORTANT:
+       questions.js must load BEFORE script.js
+  ========================== -->
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
